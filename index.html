@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free interactive English tenses, active and passive voice, and Urdu-to-English practice for Classes 6–10 in Punjab, Pakistan.">
+<meta name="theme-color" content="#16324f">
+<meta property="og:title" content="English Tenses Learning Lab | Classes 6–10">
+<meta property="og:description" content="Explore English grammar with colour-coded examples, Urdu support, voice conversion and interactive quizzes.">
+<meta property="og:type" content="website">
+<meta name="author" content="Tariq Mehmood | Interactive EdTech Learning Lab">
+<title>English Tenses Learning Lab | Classes 6–10</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2316324f%22/%3E%3Ctext x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22%3EA%3C/text%3E%3C/svg%3E">
+<style>
+:root{--navy:#16324f;--blue:#2878b5;--green:#18845b;--orange:#d97706;--purple:#7952a8;--red:#c0392b;--bg:#f3f7fb;--ink:#1d2939;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#153653,#2878b5);color:white;padding:26px 18px;text-align:center}
+header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.3rem)}header p{margin:4px auto;max-width:850px}
+main{max-width:1100px;margin:20px auto;padding:0 14px 35px}
+.panel,.card{background:var(--card);border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 14px #16324f12}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+label{display:block;font-weight:700;margin-bottom:5px}select,input[type=text]{width:100%;padding:11px;border:1px solid #b8c7d6;border-radius:8px;background:white;font-size:1rem}
+.control{flex:1;min-width:180px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+button{border:0;border-radius:9px;padding:11px 15px;font-size:1rem;font-weight:700;cursor:pointer;background:var(--blue);color:white}
+button:hover{filter:brightness(.93)}button.secondary{background:#e4edf5;color:var(--navy)}button.green{background:var(--green)}button.orange{background:var(--orange)}button.purple{background:var(--purple)}
+.tab.active{background:var(--navy);color:white}
+.hidden{display:none!important}.badge{display:inline-block;padding:4px 9px;border-radius:7px;font-weight:bold;font-size:.86rem;margin:3px}
+.subject{color:#1769aa;background:#e4f2ff}.verb{color:#13764f;background:#dff7e9}.object{color:#ad5b00;background:#fff0d8}.helper{color:#7040a2;background:#f0e5ff}
+.formula{background:#f3f6fa;border-left:5px solid var(--blue);padding:12px;border-radius:7px;font-weight:700}
+.example{font-size:1.1rem;padding:12px;background:#fbfdff;border:1px solid #e1e9f0;border-radius:9px;margin:8px 0}
+.urdu{font-size:1.15rem;direction:rtl;text-align:right;font-family:Arial,sans-serif;color:#344054}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.answer{display:block;text-align:left;width:100%;margin:7px 0;background:#edf4fa;color:#18344e;border:2px solid transparent}
+.answer.correct{border-color:var(--green);background:#e0f7e9}.answer.wrong{border-color:var(--red);background:#fde8e7}
+.feedback{padding:12px;border-radius:8px;margin-top:10px;font-weight:700}.good{background:#e0f7e9;color:#12613f}.bad{background:#fde8e7;color:#9f251d}
+.small{font-size:.9rem;color:#526273}.score{font-size:1.2rem;font-weight:800;color:var(--green)}
+footer{text-align:center;color:#5b6875;padding:15px;font-size:.9rem}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+
+/* Interactive concept lab */
+:root{--present:#138a68;--past:#a855a0;--future:#d97706;--simple:#2878b5;--continuous:#0891b2;--perfect:#7952a8;--perfectcontinuous:#c24175}
+.hero-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.era{padding:12px;border-radius:12px;text-align:center;color:white;font-weight:800}.era.present{background:var(--present)}.era.past{background:var(--past)}.era.future{background:var(--future)}
+.aspect-key{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.aspect{border-radius:8px;padding:7px 10px;font-size:.88rem;font-weight:700;color:white}.a-simple{background:var(--simple)}.a-cont{background:var(--continuous)}.a-perfect{background:var(--perfect)}.a-pc{background:var(--perfectcontinuous)}
+.tense-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}.era-column{border:1px solid #d9e3ec;border-radius:12px;padding:10px;background:#f9fbfd}.era-column h4{margin:2px 0 9px}.tense-chip{display:block;width:100%;text-align:left;margin:6px 0;background:white;color:var(--ink);border:2px solid #dce5ed;padding:9px 10px;font-size:.91rem}.tense-chip small{display:block;font-weight:400;color:#58697a}.tense-chip.selected{border-color:var(--blue);background:#e8f4ff;box-shadow:0 0 0 2px #2878b522}
+.concept-card{border-radius:12px;padding:14px;background:linear-gradient(135deg,#edf7ff,#f8f2ff);border:1px solid #d7e8f6;margin:12px 0}.concept-card h3{margin:0 0 5px}.timeline{display:flex;align-items:center;gap:8px;margin:12px 0}.timeline-line{height:6px;flex:1;border-radius:8px;background:linear-gradient(90deg,#a855a0,#138a68,#d97706)}.time-dot{width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--blue)}
+.token{display:inline-block;border-radius:7px;padding:5px 8px;margin:3px 2px;font-weight:800}.tok-subject{background:#dceeff;color:#155b95}.tok-helper{background:#efe3ff;color:#6e3e9e}.tok-verb{background:#d8f8e5;color:#126b45}.tok-object{background:#ffedcf;color:#985300}.tok-extra{background:#e9edf2;color:#475467}
+.builder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.builder-result{padding:16px;background:#f7fbff;border:2px dashed #91bfe5;border-radius:12px;margin-top:12px}.builder-result .sentence{font-size:1.25rem;font-weight:800;line-height:1.8}.step-pill{display:inline-block;padding:6px 9px;border-radius:20px;background:#e8eef5;margin:3px;font-size:.9rem;font-weight:700}
+.progress-track{height:9px;border-radius:20px;background:#e5ebf1;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#138a68,#2878b5);transition:width .3s}
+@media(max-width:720px){.tense-map{grid-template-columns:1fr}.hero-strip{grid-template-columns:1fr}.timeline{gap:4px}.era-column{padding:8px}}
+@media(max-width:600px){.panel,.card{padding:13px}button{padding:10px 12px}.control{min-width:100%}}
+
+</style>
+</head>
+<body>
+<header>
+<h1>English Tenses Learning Lab</h1>
+<p>Interactive English Grammar • Classes 6–10 • Punjab, Pakistan</p>
+<p>Learn the rule, compare examples, practise, translate, and check your understanding.</p>
+</header>
+<main>
+<section class="panel">
+<div class="controls">
+<div class="control"><label for="classLevel">Choose class level</label><select id="classLevel"><option value="6">Class 6 — Foundation</option><option value="7">Class 7 — Developing</option><option value="8" selected>Class 8 — Intermediate</option><option value="9">Class 9 — Exam practice</option><option value="10">Class 10 — Board preparation</option></select></div>
+<div class="control"><label for="tenseSelect">Choose tense</label><select id="tenseSelect"></select></div>
+<div class="control"><label for="formSelect">Sentence form</label><select id="formSelect"><option value="positive">Positive / Affirmative</option><option value="negative">Negative</option><option value="question">Interrogative / Question</option></select></div>
+</div>
+<nav>
+<button class="tab active" data-tab="learn">Explore tenses</button><button class="tab secondary" data-tab="builder">Sentence builder</button><button class="tab secondary" data-tab="voice">Active ↔ Passive</button><button class="tab secondary" data-tab="practice">Quiz practice</button><button class="tab secondary" data-tab="translate">Translation exercise</button>
+</nav>
+<div class="small">Colour key: <span class="badge subject">Subject</span><span class="badge helper">Helping verb</span><span class="badge verb">Main verb</span><span class="badge object">Object</span></div>
+</section>
+
+<section id="learn" class="panel">
+<h2>1. See the big picture</h2>
+<p>Every tense answers two questions: <strong>When?</strong> (present, past or future) and <strong>How do we view the action?</strong> (simple, continuous, perfect or perfect continuous).</p>
+<div class="hero-strip"><div class="era present">PRESENT<br><small>now / usually</small></div><div class="era past">PAST<br><small>before now</small></div><div class="era future">FUTURE<br><small>later / will</small></div></div>
+<div class="aspect-key"><span class="aspect a-simple">Simple · fact / habit</span><span class="aspect a-cont">Continuous · in progress</span><span class="aspect a-perfect">Perfect · completed / connected</span><span class="aspect a-pc">Perfect Continuous · duration</span></div>
+<div class="timeline"><span class="time-dot"></span><div class="timeline-line"></div><span class="time-dot"></span><div class="timeline-line"></div><span class="time-dot"></span></div>
+<p class="small">Tap any tense below. Notice how the helping verbs and main verb change.</p>
+<div id="tenseMap" class="tense-map"></div>
+<div class="concept-card"><h3 id="tenseTitle">Present Simple</h3>
+<p id="tenseUse"></p>
+<div class="formula" id="tenseFormula"></div>
+<h3>Example sentence</h3>
+<div class="example" id="exampleEnglish"></div>
+<div id="sentenceAnatomy" aria-label="Colour-coded sentence parts"></div>
+<div class="urdu" id="exampleUrdu"></div>
+<h3>Remember</h3><p id="tenseTip"></p></div>
+<div class="grid"><div class="card"><strong>Positive</strong><div id="positiveEx"></div></div><div class="card"><strong>Negative</strong><div id="negativeEx"></div></div><div class="card"><strong>Interrogative</strong><div id="questionEx"></div></div></div>
+<div class="concept-card"><strong>Try this:</strong> change the sentence form above from Positive to Negative to Question. Watch where the helping verb moves and whether the main verb changes.</div>
+</section>
+
+<section id="builder" class="panel hidden">
+<h2>2. Build your own sentence</h2>
+<p>Choose the parts. The lab will form a sentence and explain the pattern. Try the same idea in all 12 tenses.</p>
+<div class="builder-grid">
+<div><label for="buildTense">Tense</label><select id="buildTense"></select></div>
+<div><label for="buildForm">Sentence form</label><select id="buildForm"><option value="positive">Positive</option><option value="negative">Negative</option><option value="question">Question</option></select></div>
+<div><label for="buildSubject">Subject</label><select id="buildSubject"><option value="I">I</option><option value="He">He</option><option value="She">She</option><option value="Ali">Ali</option><option value="We">We</option><option value="They">They</option><option value="The students">The students</option></select></div>
+<div><label for="buildVerb">Main verb</label><select id="buildVerb"><option value="play">play</option><option value="read">read</option><option value="write">write</option><option value="eat">eat</option><option value="clean">clean</option><option value="go">go</option></select></div>
+<div><label for="buildObject">Object / phrase</label><select id="buildObject"><option value="cricket">cricket</option><option value="a book">a book</option><option value="a letter">a letter</option><option value="an apple">an apple</option><option value="the classroom">the classroom</option><option value="to school">to school</option></select></div>
+</div>
+<div class="builder-result"><div class="small">YOUR SENTENCE</div><div id="builtSentence" class="sentence"></div><div id="builtUrdu" class="urdu"></div><hr><strong>How it is formed</strong><p id="buildExplanation"></p><div id="buildParts"></div></div>
+<button id="cycleTense" class="orange">Compare with next tense →</button> <button id="resetBuilder" class="secondary">Reset example</button>
+</section>
+
+<section id="voice" class="panel hidden">
+<h2>Active and Passive Voice</h2>
+<p><strong>Active voice:</strong> the subject performs the action. <strong>Passive voice:</strong> the subject receives the action.</p>
+<div class="formula">Active: Subject + Verb + Object<br>Passive: Object + suitable form of “be” + past participle (V3) + (by + doer)</div>
+<div class="controls"><div class="control"><label for="voiceTense">Choose tense</label><select id="voiceTense"></select></div><div class="control"><label for="voiceForm">Sentence form</label><select id="voiceForm"><option value="positive">Positive</option><option value="negative">Negative</option><option value="question">Interrogative</option></select></div></div>
+<div class="example"><span class="badge subject">Active</span><span id="activeSentence"></span></div>
+<div class="example"><span class="badge object">Passive</span><span id="passiveSentence"></span></div>
+<div class="urdu" id="voiceUrdu"></div>
+<p class="small">Note: Passive voice is normally formed from transitive verbs (verbs that take an object). Some continuous and perfect forms are uncommon in everyday use, but their structures are useful for grammar study.</p>
+</section>
+
+<section id="practice" class="panel hidden">
+<h2>Quick Quiz</h2><p id="quizProgress">Question 1</p><div class="formula" id="quizQuestion"></div><div id="quizOptions"></div><div id="quizFeedback" aria-live="polite"></div>
+<div class="controls"><button id="nextQuestion" class="green">Next question</button><button id="restartQuiz" class="secondary">Restart quiz</button><span class="score" id="quizScore">Score: 0 / 0</span></div>
+</section>
+
+<section id="translate" class="panel hidden">
+<h2>Urdu → English Translation</h2>
+<p>Read the Urdu sentence, choose or write the correct English translation, then check your answer.</p>
+<div class="example urdu" id="translationUrdu"></div>
+<div class="controls"><div class="control"><label for="translationInput">Write your English translation</label><input id="translationInput" type="text" placeholder="Type your answer here..."></div><button id="checkTranslation" class="purple">Check answer</button><button id="nextTranslation" class="secondary">Next sentence</button></div>
+<div id="translationFeedback" aria-live="polite"></div><p class="small">Translation can have more than one correct wording. Compare the tense and meaning, not only exact punctuation.</p>
+</section>
+<footer>Created for classroom exploration by Tariq Mehmood • Interactive EdTech Learning Lab<br><a href="https://tariqfnz1-a11y.github.io/Interactive-EdTech-Learning-Lab/" style="color:#2878b5;font-weight:700">Visit the Interactive EdTech Learning Lab portfolio</a><br>Free educational resource • GitHub Pages-ready • No external libraries required</footer>
+</main>
+<script>
+const tenses = [
+{id:"ps",name:"Present Simple",use:"Habits, routines, facts and repeated actions.",formula:"Positive: Subject + V1(s/es) + object | Negative: Subject + do/does not + V1 | Question: Do/Does + subject + V1?",pos:"Ali plays cricket.",neg:"Ali does not play cricket.",q:"Does Ali play cricket?",urdu:"علی کرکٹ کھیلتا ہے۔",tip:"Use does with he, she, it or one person; after does, use the base verb: play, not plays."},
+{id:"pc",name:"Present Continuous",use:"An action happening now or around the present time.",formula:"Subject + am/is/are (+ not) + V-ing | Question: Am/Is/Are + subject + V-ing?",pos:"Sara is reading a book.",neg:"Sara is not reading a book.",q:"Is Sara reading a book?",urdu:"سارہ ایک کتاب پڑھ رہی ہے۔",tip:"Use am with I, is with he/she/it, and are with you/we/they."},
+{id:"pp",name:"Present Perfect",use:"A completed action connected with the present.",formula:"Subject + has/have (+ not) + V3 | Question: Has/Have + subject + V3?",pos:"They have finished the work.",neg:"They have not finished the work.",q:"Have they finished the work?",urdu:"انہوں نے کام مکمل کر لیا ہے۔",tip:"Use has with he/she/it and have with I/you/we/they."},
+{id:"ppc",name:"Present Perfect Continuous",use:"An action that began earlier and continues, often with for or since.",formula:"Subject + has/have been (+ not) + V-ing | Question: Has/Have + subject + been + V-ing?",pos:"He has been studying for two hours.",neg:"He has not been studying for two hours.",q:"Has he been studying for two hours?",urdu:"وہ دو گھنٹوں سے پڑھ رہا ہے۔",tip:"For describes a duration; since identifies a starting point."},
+{id:"past",name:"Past Simple",use:"An action completed at a definite time in the past.",formula:"Subject + V2 | Negative: did not + V1 | Question: Did + subject + V1?",pos:"We visited Lahore.",neg:"We did not visit Lahore.",q:"Did we visit Lahore?",urdu:"ہم نے لاہور کی سیر کی۔",tip:"After did or did not, always use the base form: visit, not visited."},
+{id:"pastc",name:"Past Continuous",use:"An action in progress at a particular time in the past.",formula:"Subject + was/were (+ not) + V-ing | Question: Was/Were + subject + V-ing?",pos:"The boys were playing football.",neg:"The boys were not playing football.",q:"Were the boys playing football?",urdu:"لڑکے فٹ بال کھیل رہے تھے۔",tip:"Use was with I/he/she/it and were with you/we/they."},
+{id:"pastp",name:"Past Perfect",use:"An action completed before another past action or time.",formula:"Subject + had (+ not) + V3 | Question: Had + subject + V3?",pos:"She had left before noon.",neg:"She had not left before noon.",q:"Had she left before noon?",urdu:"وہ دوپہر سے پہلے جا چکی تھی۔",tip:"Had is used with all subjects."},
+{id:"pastpc",name:"Past Perfect Continuous",use:"An action continuing for a period before a point in the past.",formula:"Subject + had been (+ not) + V-ing | Question: Had + subject + been + V-ing?",pos:"It had been raining for an hour.",neg:"It had not been raining for an hour.",q:"Had it been raining for an hour?",urdu:"ایک گھنٹے سے بارش ہو رہی تھی۔",tip:"The duration is viewed from a past reference point."},
+{id:"fs",name:"Future Simple",use:"Predictions, promises or future decisions.",formula:"Subject + will (+ not) + V1 | Question: Will + subject + V1?",pos:"I will help you.",neg:"I will not help you.",q:"Will I help you?",urdu:"میں تمہاری مدد کروں گا۔",tip:"Will is followed by the base form of the verb."},
+{id:"fc",name:"Future Continuous",use:"An action that will be in progress at a future time.",formula:"Subject + will be (+ not) + V-ing | Question: Will + subject + be + V-ing?",pos:"She will be studying at eight.",neg:"She will not be studying at eight.",q:"Will she be studying at eight?",urdu:"وہ آٹھ بجے پڑھ رہی ہو گی۔",tip:"Use will be + verb-ing."},
+{id:"fp",name:"Future Perfect",use:"An action that will be completed before a future time.",formula:"Subject + will have (+ not) + V3 | Question: Will + subject + have + V3?",pos:"They will have completed the task by Friday.",neg:"They will not have completed the task by Friday.",q:"Will they have completed the task by Friday?",urdu:"وہ جمعہ تک کام مکمل کر چکے ہوں گے۔",tip:"By Friday gives the deadline for completion."},
+{id:"fpc",name:"Future Perfect Continuous",use:"Emphasises the duration of an action up to a future point.",formula:"Subject + will have been (+ not) + V-ing | Question: Will + subject + have been + V-ing?",pos:"By June, he will have been teaching for ten years.",neg:"By June, he will not have been teaching for ten years.",q:"By June, will he have been teaching for ten years?",urdu:"جون تک اسے پڑھاتے ہوئے دس سال ہو چکے ہوں گے۔",tip:"This form is less common in everyday speech but useful for advanced grammar."}
+];
+const tenseSelect=document.getElementById('tenseSelect'), voiceTense=document.getElementById('voiceTense');
+tenses.forEach((t,i)=>{tenseSelect.add(new Option(t.name,t.id));voiceTense.add(new Option(t.name,t.id));document.getElementById('buildTense').add(new Option(t.name,t.id));});
+function selectedTense(){return tenses.find(t=>t.id===tenseSelect.value)||tenses[0]}
+function renderLearn(){const t=selectedTense(),f=document.getElementById('formSelect').value;document.getElementById('tenseTitle').textContent=t.name;document.getElementById('tenseUse').textContent=t.use;document.getElementById('tenseFormula').textContent=t.formula;const sentence=t[f==='question'?'q':f==='negative'?'neg':'pos'];document.getElementById('exampleEnglish').textContent=sentence;document.getElementById('exampleUrdu').textContent=t.urdu;document.getElementById('tenseTip').textContent=t.tip;document.getElementById('positiveEx').textContent=t.pos;document.getElementById('negativeEx').textContent=t.neg;document.getElementById('questionEx').textContent=t.q;renderAnatomy(sentence);renderTenseMap();}
+function sentenceMarkup(sentence){const words=sentence.match(/[A-Za-z]+(?:'[A-Za-z]+)?|[^A-Za-z]+/g)||[];return words.map(w=>{const z=w.toLowerCase().trim();if(!z)return w;let c='tok-extra';if(['i','you','he','she','it','we','they','ali','sara','the','students','boys'].includes(z))c='tok-subject';if(['am','is','are','was','were','has','have','had','do','does','did','will','been','be'].includes(z))c='tok-helper';if(/(ing)$/.test(z)||['play','plays','read','reads','write','writes','wrote','written','ate','eaten','go','goes','went','gone','clean','cleans','cleaned','finished','left','help','helps','helped','visited','completed'].includes(z))c='tok-verb';if(['cricket','book','work','lahore','letter','classroom','task'].includes(z))c='tok-object';return `<span class="token ${c}">${w}</span>`}).join('');}
+function renderAnatomy(sentence){const box=document.getElementById('sentenceAnatomy');if(box)box.innerHTML=sentenceMarkup(sentence);}
+function renderTenseMap(){const box=document.getElementById('tenseMap');if(!box)return;const groups=[{title:'PRESENT · now',ids:['ps','pc','pp','ppc'],cls:'present'},{title:'PAST · before now',ids:['past','pastc','pastp','pastpc'],cls:'past'},{title:'FUTURE · later',ids:['fs','fc','fp','fpc'],cls:'future'}];const labels={ps:'Simple · habit / fact',pc:'Continuous · happening',pp:'Perfect · completed',ppc:'Perfect continuous · duration',past:'Simple · finished action',pastc:'Continuous · in progress',pastp:'Perfect · earlier past',pastpc:'Perfect continuous · duration',fs:'Simple · will happen',fc:'Continuous · in progress later',fp:'Perfect · done by a time',fpc:'Perfect continuous · duration'};box.innerHTML=groups.map(g=>`<div class="era-column"><h4>${g.title}</h4>${g.ids.map(id=>{const t=tenses.find(x=>x.id===id);return `<button class="tense-chip ${id===tenseSelect.value?'selected':''}" data-tense="${id}">${t.name}<small>${labels[id]}</small></button>`}).join('')}</div>`).join('');box.querySelectorAll('[data-tense]').forEach(b=>b.addEventListener('click',()=>{tenseSelect.value=b.dataset.tense;renderLearn()}));}
+tenseSelect.addEventListener('change',renderLearn);document.getElementById('formSelect').addEventListener('change',renderLearn);
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>{x.classList.remove('active');x.classList.add('secondary')});b.classList.add('active');b.classList.remove('secondary');['learn','builder','voice','practice','translate'].forEach(id=>document.getElementById(id).classList.toggle('hidden',id!==b.dataset.tab));}));
+
+const buildTense=document.getElementById('buildTense');
+const verbForms={play:{v2:'played',v3:'played',ing:'playing',s:'plays'},read:{v2:'read',v3:'read',ing:'reading',s:'reads'},write:{v2:'wrote',v3:'written',ing:'writing',s:'writes'},eat:{v2:'ate',v3:'eaten',ing:'eating',s:'eats'},clean:{v2:'cleaned',v3:'cleaned',ing:'cleaning',s:'cleans'},go:{v2:'went',v3:'gone',ing:'going',s:'goes'}};
+function isSingular(s){return ['He','She','Ali'].includes(s)}
+function buildSentence(){const id=buildTense.value||'ps',form=document.getElementById('buildForm').value,sub=document.getElementById('buildSubject').value,v=document.getElementById('buildVerb').value,obj=document.getElementById('buildObject').value,V=verbForms[v],sing=isSingular(sub),beNow=sing?'is':sub==='I'?'am':'are',bePast=sing?'was':'were',have=sing?'has':'have';let core='',rule='',help='';
+const make=(helper,main)=>`${sub} ${helper?helper+' ':''}${main}${obj?' '+obj:''}`;
+switch(id){case'ps':core=form==='positive'?make('',sing?V.s:v):form==='negative'?`${sub} ${sing?'does':'do'} not ${v} ${obj}`:`${sing?'Does':'Do'} ${sub} ${v} ${obj}?`;rule=form==='positive'?'Subject + V1(s/es) + object':form==='negative'?'Subject + do/does not + V1 + object':'Do/Does + subject + V1 + object?';break;
+case'pc':core=form==='positive'?make(beNow,V.ing):form==='negative'?make(beNow+' not',V.ing):`${beNow[0].toUpperCase()+beNow.slice(1)} ${sub} ${V.ing} ${obj}?`;rule='Subject + am/is/are (+ not) + V-ing';break;
+case'pp':core=form==='positive'?make(have,V.v3):form==='negative'?make(have+' not',V.v3):`${have[0].toUpperCase()+have.slice(1)} ${sub} ${V.v3} ${obj}?`;rule='Subject + has/have (+ not) + V3';break;
+case'ppc':core=form==='positive'?make(have+' been',V.ing):form==='negative'?make(have+' not been',V.ing):`${have[0].toUpperCase()+have.slice(1)} ${sub} been ${V.ing} ${obj}?`;rule='Subject + has/have been (+ not) + V-ing';break;
+case'past':core=form==='positive'?make('',V.v2):form==='negative'?`${sub} did not ${v} ${obj}`:`Did ${sub} ${v} ${obj}?`;rule=form==='positive'?'Subject + V2':'Subject + did (+ not) + V1';break;
+case'pastc':core=form==='positive'?make(bePast,V.ing):form==='negative'?make(bePast+' not',V.ing):`${bePast[0].toUpperCase()+bePast.slice(1)} ${sub} ${V.ing} ${obj}?`;rule='Subject + was/were (+ not) + V-ing';break;
+case'pastp':core=form==='positive'?make('had',V.v3):form==='negative'?make('had not',V.v3):`Had ${sub} ${V.v3} ${obj}?`;rule='Subject + had (+ not) + V3';break;
+case'pastpc':core=form==='positive'?make('had been',V.ing):form==='negative'?make('had not been',V.ing):`Had ${sub} been ${V.ing} ${obj}?`;rule='Subject + had been (+ not) + V-ing';break;
+case'fs':core=form==='positive'?make('will',v):form==='negative'?make('will not',v):`Will ${sub} ${v} ${obj}?`;rule='Subject + will (+ not) + V1';break;
+case'fc':core=form==='positive'?make('will be',V.ing):form==='negative'?make('will not be',V.ing):`Will ${sub} be ${V.ing} ${obj}?`;rule='Subject + will be (+ not) + V-ing';break;
+case'fp':core=form==='positive'?make('will have',V.v3):form==='negative'?make('will not have',V.v3):`Will ${sub} have ${V.v3} ${obj}?`;rule='Subject + will have (+ not) + V3';break;
+case'fpc':core=form==='positive'?make('will have been',V.ing):form==='negative'?make('will not have been',V.ing):`Will ${sub} have been ${V.ing} ${obj}?`;rule='Subject + will have been (+ not) + V-ing';break;}
+if(form==='positive'&&!/[.!?]$/.test(core))core+='.';document.getElementById('builtSentence').innerHTML=sentenceMarkup(core);document.getElementById('buildExplanation').textContent=rule+'. Focus on the helping verb(s), then choose the correct main-verb form. In questions, the first helping verb moves before the subject.';document.getElementById('buildParts').innerHTML='<span class="token tok-subject">Subject: '+sub+'</span><span class="token tok-helper">Helping verb(s): '+(core.match(/\b(am|is|are|was|were|has|have|had|do|does|did|will|been|be)\b/ig)||[]).join(' + ')+'</span><span class="token tok-verb">Main verb: '+(id.includes('c')?V.ing:['pp','pastp','fp'].includes(id)?V.v3:id==='past'?V.v2:id==='ps'&&sing?V.s:v)+'</span><span class="token tok-object">Object / phrase: '+obj+'</span>';document.getElementById('builtUrdu').textContent='یاد رکھیں: جملے کی قسم کے مطابق helping verb اور main verb کی شکل بدلتی ہے۔';}
+['buildTense','buildForm','buildSubject','buildVerb','buildObject'].forEach(id=>document.getElementById(id).addEventListener('change',buildSentence));
+document.getElementById('cycleTense').onclick=()=>{let i=tenses.findIndex(t=>t.id===buildTense.value);buildTense.value=tenses[(i+1)%tenses.length].id;buildSentence()};document.getElementById('resetBuilder').onclick=()=>{buildTense.value='ps';document.getElementById('buildForm').value='positive';document.getElementById('buildSubject').value='Ali';document.getElementById('buildVerb').value='play';document.getElementById('buildObject').value='cricket';buildSentence()};
+const voiceData={
+ps:{a:"The students clean the classroom.",p:"The classroom is cleaned by the students.",u:"طلبہ جماعت کو صاف کرتے ہیں۔"},
+pc:{a:"The students are cleaning the classroom.",p:"The classroom is being cleaned by the students.",u:"طلبہ جماعت کو صاف کر رہے ہیں۔"},
+pp:{a:"The students have cleaned the classroom.",p:"The classroom has been cleaned by the students.",u:"طلبہ جماعت کو صاف کر چکے ہیں۔"},
+ppc:{a:"The students have been cleaning the classroom.",p:"Passive form is rarely used and is usually avoided.",u:"طلبہ جماعت کو صاف کرتے رہے ہیں۔"},
+past:{a:"The students cleaned the classroom.",p:"The classroom was cleaned by the students.",u:"طلبہ نے جماعت صاف کی۔"},
+pastc:{a:"The students were cleaning the classroom.",p:"The classroom was being cleaned by the students.",u:"طلبہ جماعت کو صاف کر رہے تھے۔"},
+pastp:{a:"The students had cleaned the classroom.",p:"The classroom had been cleaned by the students.",u:"طلبہ جماعت صاف کر چکے تھے۔"},
+pastpc:{a:"The students had been cleaning the classroom.",p:"Passive form is rarely used and is usually avoided.",u:"طلبہ جماعت کو صاف کرتے رہے تھے۔"},
+fs:{a:"The students will clean the classroom.",p:"The classroom will be cleaned by the students.",u:"طلبہ جماعت صاف کریں گے۔"},
+fc:{a:"The students will be cleaning the classroom.",p:"The classroom will be being cleaned by the students (very uncommon).",u:"طلبہ جماعت صاف کر رہے ہوں گے۔"},
+fp:{a:"The students will have cleaned the classroom.",p:"The classroom will have been cleaned by the students.",u:"طلبہ جماعت صاف کر چکے ہوں گے۔"},
+fpc:{a:"The students will have been cleaning the classroom.",p:"Passive form is rarely used and is usually avoided.",u:"طلبہ جماعت کو صاف کرتے آ رہے ہوں گے۔"}
+};
+function updateVoice(){let id=voiceTense.value||'ps',f=document.getElementById('voiceForm').value,d=voiceData[id];let a=d.a,p=d.p;if(f==='negative'){a=a.replace(/\.$/,'')+" not.";p=p.replace(/\.$/,'')+" not.";if(id==='ps')a="The students do not clean the classroom.";if(id==='past')a="The students did not clean the classroom.";if(id==='fs')a="The students will not clean the classroom.";}if(f==='question'){a="Do the students clean the classroom?";p="Is the classroom cleaned by the students?";if(id==='past'){a="Did the students clean the classroom?";p="Was the classroom cleaned by the students?";}if(id==='fs'){a="Will the students clean the classroom?";p="Will the classroom be cleaned by the students?";}if(id==='pc'){a="Are the students cleaning the classroom?";p="Is the classroom being cleaned by the students?";}if(id==='pp'){a="Have the students cleaned the classroom?";p="Has the classroom been cleaned by the students?";}}document.getElementById('activeSentence').textContent=a;document.getElementById('passiveSentence').textContent=p;document.getElementById('voiceUrdu').textContent=d.u;}
+voiceTense.addEventListener('change',updateVoice);document.getElementById('voiceForm').addEventListener('change',updateVoice);
+
+const allQuestions=[
+{q:"Choose the correct sentence: He ___ to school every day.",o:["go","goes","is go","going"],a:1,e:"Present Simple: with he/she/it, add -s or -es."},
+{q:"Which is the negative form of “She is reading”?",o:["She does not reading.","She not is reading.","She is not reading.","She did not read."],a:2,e:"Present Continuous uses is + not + verb-ing."},
+{q:"Choose the correct question.",o:["Did he went home?","Did he go home?","Does he went home?","He did go home?"],a:1,e:"After did, use the base verb go."},
+{q:"Choose the past participle (V3) of “write”.",o:["writed","wrote","written","writing"],a:2,e:"Write – wrote – written."},
+{q:"Passive voice of “Ali opens the door” is:",o:["The door opened Ali.","The door is opened by Ali.","The door was opened by Ali.","Ali is opened by the door."],a:1,e:"Present Simple passive = is/am/are + V3."},
+{q:"Choose the correct future sentence.",o:["They will comes.","They will came.","They will come.","They will coming."],a:2,e:"Will + base form of the verb."},
+{q:"“وہ کتاب پڑھ رہی ہے” means:",o:["She reads a book every day.","She read a book.","She is reading a book.","She has read a book."],a:2,e:"رہی ہے signals Present Continuous in this context."},
+{q:"Passive voice of “The teacher praised Sara” is:",o:["Sara is praised by the teacher.","Sara was praised by the teacher.","Sara praised the teacher.","Sara had praised the teacher."],a:1,e:"Past Simple passive = was/were + V3."},
+{q:"Choose the correct Present Perfect sentence.",o:["I has finished.","I have finished.","I have finish.","I am finished yesterday."],a:1,e:"Use have + V3 with I."},
+{q:"Which question is correct?",o:["Has she completed her work?","Has she complete her work?","Does she has completed?","She has completed her work?"],a:0,e:"Has + subject + V3 forms a Present Perfect question."},
+{q:"“They had left before I arrived” is:",o:["Past Simple","Past Continuous","Past Perfect","Present Perfect"],a:2,e:"Past Perfect describes the earlier of two past actions."},
+{q:"Passive voice of “They will announce the result” is:",o:["The result will announce.","The result is announced.","The result will be announced.","The result will have announce."],a:2,e:"Future Simple passive = will be + V3."}
+];
+let quizOrder=[],quizIndex=0,quizCorrect=0,quizAnswered=false;
+function shuffle(a){return a.map(x=>[Math.random(),x]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
+function startQuiz(){quizOrder=shuffle(allQuestions).slice(0,Math.min(8,allQuestions.length));quizIndex=0;quizCorrect=0;showQuestion()}
+function showQuestion(){quizAnswered=false;let q=quizOrder[quizIndex];document.getElementById('quizProgress').textContent=`Question ${quizIndex+1} of ${quizOrder.length} • Class ${document.getElementById('classLevel').value}`;document.getElementById('quizQuestion').textContent=q.q;let box=document.getElementById('quizOptions');box.innerHTML='';q.o.forEach((o,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=o;b.onclick=()=>answerQuestion(i,b);box.appendChild(b)});document.getElementById('quizFeedback').innerHTML='';document.getElementById('quizScore').textContent=`Score: ${quizCorrect} / ${quizIndex}`;document.getElementById('nextQuestion').textContent=quizIndex===quizOrder.length-1?'Finish / Restart':'Next question'}
+function answerQuestion(i,btn){if(quizAnswered)return;quizAnswered=true;let q=quizOrder[quizIndex];document.querySelectorAll('.answer').forEach((b,j)=>{if(j===q.a)b.classList.add('correct')});if(i===q.a){quizCorrect++;document.getElementById('quizFeedback').innerHTML=`<div class="feedback good">Correct! ${q.e}</div>`}else{btn.classList.add('wrong');document.getElementById('quizFeedback').innerHTML=`<div class="feedback bad">Not quite. ${q.e}</div>`}document.getElementById('quizScore').textContent=`Score: ${quizCorrect} / ${quizIndex+1}`}
+document.getElementById('nextQuestion').onclick=()=>{if(quizIndex<quizOrder.length-1){quizIndex++;showQuestion()}else{document.getElementById('quizQuestion').textContent=`Quiz complete! You scored ${quizCorrect} out of ${quizOrder.length}.`;document.getElementById('quizOptions').innerHTML='';document.getElementById('quizFeedback').innerHTML='<div class="feedback good">Review the explanations, then try again.</div>';document.getElementById('quizScore').textContent=`Final score: ${quizCorrect} / ${quizOrder.length}`}};document.getElementById('restartQuiz').onclick=startQuiz;
+
+const translations=[
+{u:"علی ہر روز اسکول جاتا ہے۔",a:["Ali goes to school every day.","Ali goes to school daily."]},
+{u:"وہ اس وقت کھانا کھا رہی ہے۔",a:["She is eating food now.","She is eating now."]},
+{u:"ہم نے اپنا کام مکمل کر لیا ہے۔",a:["We have completed our work.","We have finished our work."]},
+{u:"کیا تم کرکٹ کھیلتے ہو؟",a:["Do you play cricket?"]},
+{u:"اس نے خط نہیں لکھا۔",a:["He did not write the letter.","She did not write the letter."]},
+{u:"کتاب استاد کے ذریعے پڑھائی گئی۔",a:["The book was taught by the teacher.","The book was read by the teacher."]},
+{u:"وہ کل لاہور جائے گا۔",a:["He will go to Lahore tomorrow.","She will go to Lahore tomorrow."]},
+{u:"کیا کام مکمل کیا جا چکا ہے؟",a:["Has the work been completed?","Has the work been finished?"]}
+];let transIndex=0;
+function showTranslation(){let t=translations[transIndex];document.getElementById('translationUrdu').textContent=t.u;document.getElementById('translationInput').value='';document.getElementById('translationFeedback').innerHTML=''}
+document.getElementById('checkTranslation').onclick=()=>{let ans=document.getElementById('translationInput').value.trim().toLowerCase().replace(/[.!?]+$/,'');let t=translations[transIndex];let ok=t.a.some(x=>x.toLowerCase().replace(/[.!?]+$/,'')===ans);document.getElementById('translationFeedback').innerHTML=`<div class="feedback ${ok?'good':'bad'}">${ok?'Well done!':'Suggested answer:'} ${t.a[0]}</div>`};
+document.getElementById('nextTranslation').onclick=()=>{transIndex=(transIndex+1)%translations.length;showTranslation()};
+document.getElementById('classLevel').addEventListener('change',()=>{let c=+document.getElementById('classLevel').value;if(c<=7){tenseSelect.value='ps';document.getElementById('formSelect').value='positive'}else if(c===8){tenseSelect.value='pc'}else if(c===9){tenseSelect.value='past'}else{tenseSelect.value='pp'}renderLearn()});
+renderLearn();buildSentence();updateVoice();startQuiz();showTranslation();
+</script>
+</body>
+</html>
